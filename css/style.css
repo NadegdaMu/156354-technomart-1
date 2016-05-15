@@ -394,22 +394,20 @@ input[type="search"]:-ms-input-placeholder  {
     width:  60px;
     background-color: #ffffff;
 }
-.user-man p {
+.user-man a {
+	display: block;
+	position: relative;
+	padding-top: 15px;
 	padding-left: 50px;
-	padding-top: 14px;
-    padding-bottom: 15px;
-	margin: 0px;
-	font-size: 21px;
+    font-size: 21px;
 	line-height: 18px;
 	font-family: "Cuprum", "Arial", sans-serif;
+	text-decoration: none;
+	color: #000;
 	box-sizing: border-box;
-	
 }
-.user-man:active p {
-	color: #b2b2b2;
-}
-.user-man .icon-man {
-    content: "";
+.user-man a::before {
+	content: "";
     position: absolute;
     top: 15px;
     left: 17px;
@@ -417,7 +415,7 @@ input[type="search"]:-ms-input-placeholder  {
     height: 18px;
     background: #fff url("../img/sprite/sprite.png");
     background-position: -5px -347px;
-}    
+}
 .user-logout .icon-logout {
 	content: "";
     position: absolute;
@@ -429,7 +427,7 @@ input[type="search"]:-ms-input-placeholder  {
     background-position: -5px -188px;
     
 }
-.user-man:hover .icon-man {
+.user-man:hover a::before {
     content: "";
     position: absolute;
     top: 15px;
@@ -451,8 +449,10 @@ input[type="search"]:-ms-input-placeholder  {
     background-position: -5px -215px;
 
 }
-
-.user-man:active .icon-man {
+.user-man:active a {
+	color: #b2b2b2;
+}
+.user-man:active a::before  {
     content: "";
     position: absolute;
     top: 15px;
@@ -1003,7 +1003,7 @@ input[type="search"]:-ms-input-placeholder  {
 	cursor: pointer;
 	border-top: 1px solid #405069;
 	border-bottom: 1px solid #293449;
-	color: #ffffff;
+	color: #fff;
 	background-color: #32425c;
 }
 .services__menu  label:hover {
@@ -1011,7 +1011,9 @@ input[type="search"]:-ms-input-placeholder  {
 }
 .services__menu  label:active {
 	color: #32425c;
-	background-color: #ffffff;
+	background-color: #fff;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 
 }
 .services__menu input[type="radio"] {
@@ -1112,8 +1114,8 @@ input[type="search"]:-ms-input-placeholder  {
 #btn-7:checked ~ .services-controls label[for="btn-7"] {
 	background-color: #fff;
 	color: #32425c;
-	border-top: #fff;
-	border-bottom: #fff;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 }
 
 .main__left-block {
@@ -1182,10 +1184,10 @@ ul.list-styled {
     margin-top: 41px;
   
 }
-.main__left-block .btn-compani:hover {
+.main__left-block .compani:hover {
     background-color: #ca2c37;
 }
-.main__left-block .btn-compani:active {
+.main__left-block .compani:active {
     background-color: #ba2732;
 }
 .main__right-block {
@@ -1484,7 +1486,7 @@ ul.list-styled {
     padding-right: 35px;
 }
 .breadcrumbs a, span {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 18px;
     font-family: "PT Sans", "Arial", sans-serif;
     text-decoration: none;
@@ -1499,11 +1501,9 @@ a.icon {
     background-position: -5px -85px;
    
 }
-.breadcrumbs a.ref {
-	padding-left: 10px;
-}
+
 span {
-	padding-left: 16px;
+	padding-left: 3px;
 }
  .breadcrumbs a::after {
 	content: "";
@@ -1522,7 +1522,7 @@ span {
 	content: "";
 	position: absolute;
 	top: 6px;
-	left: 30px;
+	left: 27px;
 	width: 8px;
     height: 12px;
 	background: url("../img/sprite/sprite.png");
@@ -1534,7 +1534,7 @@ span {
 	content: "";
 	position: absolute;
 	top: 6px;
-	left: 106px;
+	left: 98px;
 	background: url("../img/sprite/sprite.png");
 	width: 8px;
     height: 12px;
@@ -1661,7 +1661,7 @@ span {
 	display: block;
 	position: absolute;
 	top: 15px;
-	left: 106px;
+	left: 101px;
 	border: 1px solid #000;
 }
 .crease {
@@ -2116,14 +2116,13 @@ span {
 
 .modal-content {
 	display: none;
-	position: absolute;
-	top: 2520px;
+	position: fixed;
+	top: 80px;
 	left: 322px;
-	min-height: 430px;
 	border-top: 7px solid #ee3643;
 	background-color: #fff;
 	color: #000;
-    box-shadow: 0 40px 40px 5px rgba(5,5,5,0.6);
+    box-shadow: 0 10px 40px 0px rgba(5,5,5,0.5);
     z-index: 40;
 }
 
@@ -2134,7 +2133,7 @@ span {
 }
 .modal-content__top {
 	width: 460px;
-	height: 270px;
+	height: 275px;
 	padding-right: 80px;
 	padding-left: 80px;
 	padding-top: 29px;
@@ -2154,8 +2153,7 @@ span {
 }
 .modal-content__letter {
 	clear: both;
-
-	height: 140px;
+    width: 460px;
 	padding-top: 20px;
 	
 }
@@ -2183,6 +2181,8 @@ input {
 	font-weight: normal;
 }
 textarea {
+	width: 446px;
+	padding: 0;
 	padding-top: 10px;
 	padding-left: 14px;
 	font-size: 13px;
@@ -2195,16 +2195,16 @@ textarea {
 }
 .modal-content__lower {
 	height: 75px;
-	padding-top: 9px;
 	padding-left: 80px;
+	padding-top: 37px;
 	background-color: #f1f1f1;
 }
 .modal-content__send {
 	width: 460px;
+	height: 38px;
 	border: none;
 	outline: none;
-	
-
+	padding: 0;
 }
 .modal-content__send:hover {
     background-color: #b22832;
@@ -2246,11 +2246,13 @@ textarea {
 /*Всплывающая карта*/
 .modal-big-map {
 	position: absolute;
-	top: 2420px;
-	left: 220px;
+	top: 2340px;
+	left: 135px;
 	width: 942px;
-	height: 449px;
-	
+	height: 475px;
+    cursor: pointer;
+	box-shadow: 0 0 30px 0 #c4c3c4,
+	            30px 0 30px 0 #c4c3c4;
 }
 .big-map-close {
 	position: absolute;
